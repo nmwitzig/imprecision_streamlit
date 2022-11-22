@@ -6,8 +6,8 @@ st.set_page_config(layout="wide", page_title="Imprecision", page_icon=":moneybag
 import pandas as pd
 import numpy as np
 from scipy.stats import norm
-import mpld3
-import streamlit.components.v1 as components
+#import mpld3
+#import streamlit.components.v1 as components
 
 
 
