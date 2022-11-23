@@ -69,7 +69,7 @@ else:
     """)
 bayes_lambda = sigma_slider**2 / (nu_slider**2 + sigma_slider**2)
 st.write("inverse of probability = ", round(1/prob_slider,4))
-st.write("Threshold, i.e., inverse of probability to the power of 1/lambda= ", round((1/prob_slider)**(bayes_lambda**-1),4))
+st.write("Threshold, i.e., inverse of probability times 1/lambda (eq 2.4.)= ", round((1/prob_slider)**(bayes_lambda**-1),4))
 # make header
 st.header("CDF")
 # make matplotlib plot
@@ -77,7 +77,7 @@ import matplotlib.pyplot as plt
 fig = plt.figure()
 plt.plot(ratio, khaw_cdf(nu_slider, sigma_slider, prob_slider, ratio), label="pdf")
 if log_toggle:
-    plt.axvline(x=(1/prob_slider)**(bayes_lambda**-1), color="red")
+    plt.axvline(x=(1/prob_slider)*(bayes_lambda**-1), color="red")
 else:
     plt.axvline(x=(1/prob_slider), color="red", label="beta")
 #html = mpld3.fig_to_html(fig)
